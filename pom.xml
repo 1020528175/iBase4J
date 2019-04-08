@@ -21,7 +21,7 @@
 		<module.name>${project.artifactId}</module.name>
 		<!-- -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<ibase4j.version>3.6.7</ibase4j.version>
+		<ibase4j.version>3.7.0</ibase4j.version>
 		<!-- spring版本号 -->
 		<spring.version>5.1.3.RELEASE</spring.version>
 		<spring-data-redis.version>2.0.8.RELEASE</spring-data-redis.version>
@@ -199,7 +199,7 @@
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
 			<version>1.7</version>
-			<scope>test</scope>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.freemarker</groupId>
