@@ -42,7 +42,7 @@ public class Generator {
         dsc.setUsername("root");
         dsc.setPassword("buzhidao");
         dsc.setUrl(
-            "jdbc:mysql://127.0.0.1:3306/ibase4j?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&allowMultiQueries=true&serverTimezone=PRC&useSSL=false");
+                "jdbc:mysql://127.0.0.1:3306/ibase4j?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&allowMultiQueries=true&serverTimezone=PRC&useSSL=false");
         mpg.setDataSource(dsc);
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
@@ -70,6 +70,7 @@ public class Generator {
         // public User setName(String name) {this.name = name; return this;}
         // strategy.setEntityBuliderModel(true);
         strategy.setLogicDeleteFieldName("enable");
+        strategy.setRestControllerStyle(true);
         mpg.setStrategy(strategy);
         // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值
         InjectionConfig cfg = new InjectionConfig() {
@@ -77,6 +78,7 @@ public class Generator {
             public void initMap() {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("rpcService", false);
+                map.put("permissions", true);
                 this.setMap(map);
             }
         };
